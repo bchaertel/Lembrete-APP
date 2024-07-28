@@ -1,7 +1,6 @@
 using LembreteApp.Models;
 using LembreteApp.Services;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
 using System.Collections.Generic;
 using LembreteApp.Interfaces;
 
@@ -69,6 +68,11 @@ namespace LembreteApp.Controllers
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
+            if (id == null)
+            {
+                return BadRequest("Id cannot be null.");
+            }
+
             var lembrete = _lembreteService.Get(id);
 
             if (lembrete == null)
@@ -76,7 +80,7 @@ namespace LembreteApp.Controllers
                 return NotFound();
             }
 
-            _lembreteService.Remove(lembrete.Id);
+            _lembreteService.Remove(id);
 
             return NoContent();
         }
