@@ -23,15 +23,20 @@ A estrutura do projeto está organizada da seguinte forma:
 - .NET Core SDK
 - MongoDB
 
-## Restaure as dependências do .NET:
-
-utilize este comando na raíz do projeto: dotnet restore
-
 ## Instale as dependências do npm:
 
 utilize este comando na raiz do projeto: npm install
 
 # Utilização:
+
+## Restaurando depedências, Compilando e iniciando o servidor:
+
+- Utilize os seguintes comandos na raíz do projeto:
+
+* dotnet restore
+* npm run build-css
+* dotnet build
+* dotnet run
 
 ## Visualização do aplicativo:
 
