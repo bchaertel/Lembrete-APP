@@ -1,0 +1,126 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.log
+*.pyc
+*.pyo
+*.pyd
+*.pid
+*.tgz
+*.lock
+*.gz
+*.rar
+*.zip
+*.jar
+*.war
+*.ear
+*.apk
+*.appx
+*.whl
+
+# Packages #
+############
+*.deb
+*.dmg
+*.pkg
+*.msi
+*.bin
+*.cab
+*.inf
+*.rpm
+*.msm
+*.msp
+*.udeb
+
+# Directories #
+###############
+bin/
+obj/
+.vs/
+.vscode/
+.idea/
+.sass-cache/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs and editors #
+####################
+*.swp
+*~
+.project
+.classpath
+.cproject
+*.csettings
+*.mtj.tmp/
+.vscode/
+*.launch
+.settings/
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+# Folder config file
+Desktop.ini
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+# Windows 8 Store app package directories
+AppPackages/
+# JetBrains Rider
+.idea/
+# Mono auto generated files
+mono_crash.*
+# External library
+*.dll
+*.lib
+
+# ASP.NET Core #
+################
+project.lock.json
+project.fragment.lock.json
+artifacts/
+## Auto-generated VS 2019 folder
+.vs/
+
+# User-specific files #
+#######################
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Node.js #
+###########
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# SASS #
+########
+.sass-cache/
+
+# Production
+wwwroot/css/styles.css
+wwwroot/css/styles.css.map
