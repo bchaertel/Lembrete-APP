@@ -1,7 +1,6 @@
 import { fireEvent, getByText } from "@testing-library/dom";
 import "@testing-library/jest-dom/extend-expect";
 
-// Função carregarLembretes importada ou definida aqui para os testes
 async function carregarLembretes() {
   const response = await fetch("/api/lembretes");
   if (response.ok) {
@@ -13,7 +12,6 @@ async function carregarLembretes() {
   }
 }
 
-// Função de ordenação e exibição simulada para os testes
 function ordenarEExibirLembretes(lembretes) {
   lembretes.sort((a, b) => new Date(a.data) - new Date(b.data));
   const lembretesDiv = document.getElementById("lembretes");
@@ -49,7 +47,6 @@ function ordenarEExibirLembretes(lembretes) {
   });
 }
 
-// Configura o ambiente de teste
 document.body.innerHTML = `
   <section id="creation-section" class="card">
     <h1>Lembrete App</h1>
@@ -118,14 +115,12 @@ test("Renderiza os elementos do form", () => {
 test("Valida as entradas do formulário", () => {
   window.alert = jest.fn();
 
-  // Submete o formulário sem preencher os campos
   fireEvent.submit(form);
   expect(window.alert).toHaveBeenCalledWith(
     "Nome deve estar preenchido e Data deve ser válida e no futuro."
   );
-  window.alert.mockClear(); // Limpa o mock para o próximo teste
+  window.alert.mockClear();
 
-  // Preenche os campos com dados válidos
   fireEvent.change(nomeInput, { target: { value: "Teste de Lembrete" } });
   fireEvent.change(dataInput, { target: { value: "2024-12-31" } });
   fireEvent.submit(form);
@@ -135,7 +130,6 @@ test("Valida as entradas do formulário", () => {
 });
 
 test("Agrupa os lembretes por data", () => {
-  // Adiciona lembretes com diferentes datas
   fireEvent.change(nomeInput, { target: { value: "Lembrete 1" } });
   fireEvent.change(dataInput, { target: { value: "2024-12-31" } });
   fireEvent.submit(form);
@@ -155,7 +149,6 @@ test("Agrupa os lembretes por data", () => {
 });
 
 test("Deleta um lembrete", () => {
-  // Adiciona um lembrete para deletar
   fireEvent.change(nomeInput, { target: { value: "Lembrete para deletar" } });
   fireEvent.change(dataInput, { target: { value: "2024-12-31" } });
   fireEvent.submit(form);
@@ -165,14 +158,12 @@ test("Deleta um lembrete", () => {
 
   fireEvent.click(deleteButton);
 
-  // Remove o elemento manualmente para simular a deleção
   lembrete.parentElement.removeChild(lembrete);
 
   expect(lembretesDiv).not.toHaveTextContent("Lembrete para deletar");
 });
 
 test("Carrega lembretes ao iniciar a página", async () => {
-  // Mock da função fetch para retornar lembretes simulados
   global.fetch = jest.fn(() =>
     Promise.resolve({
       ok: true,
@@ -188,7 +179,6 @@ test("Carrega lembretes ao iniciar a página", async () => {
 });
 
 test("Exibe erro ao falhar no carregamento dos lembretes", async () => {
-  // Mock da função fetch para simular uma falha
   global.fetch = jest.fn(() =>
     Promise.resolve({
       ok: false,
