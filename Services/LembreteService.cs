@@ -42,7 +42,7 @@ namespace LembreteApp.Services
             await _lembretes.DeleteOneAsync(lembrete => lembrete.Id == id);
         }
 
-        // Métodos síncronos para atender à interface ILembreteService
+        
         public List<Lembrete> Get()
         {
             return _lembretes.Find(lembrete => true).ToList();

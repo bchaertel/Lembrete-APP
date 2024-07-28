@@ -21,7 +21,7 @@ namespace LembreteApp.Controllers
         public ActionResult<List<Lembrete>> Get()
         {
             var lembretes = _lembreteService.Get();
-            return Ok(lembretes); // Retorna um OkObjectResult que encapsula a lista de Lembrete
+            return Ok(lembretes); 
         }
 
         [HttpGet("{id:length(24)}", Name = "GetLembrete")]

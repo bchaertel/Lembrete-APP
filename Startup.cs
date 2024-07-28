@@ -23,17 +23,16 @@ namespace LembreteApp
         {
             services.AddControllers();
 
-            // Registrar o IMongoClient utilizando uma string de conexão direta para o MongoDB local
+            
             services.AddSingleton<IMongoClient, MongoClient>(sp =>
             {
                 var connectionString = "mongodb://localhost:27017";
-                Console.WriteLine($"Connection String: {connectionString}"); // Linha de depuração
+                Console.WriteLine($"Connection String: {connectionString}"); 
                 return new MongoClient(connectionString);
             });
 
             services.AddSingleton<LembreteService>();
             
-            // Adicionar esta linha para registrar ILembreteService
             services.AddScoped<ILembreteService, LembreteService>();
         }
 
