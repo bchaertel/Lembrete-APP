@@ -1,6 +1,7 @@
 ﻿# Lembrete App
 
-Este é um aplicativo de lembretes construído usando HTML, CSS e JavaScript, ASP.NET Core e MongoDB.
+#Decisões do Projeto:
+Este é um aplicativo de lembretes construído usando HTML, CSS/SCSS com Pré/Pós processadores, JavaScript, ASP.NET Core e MongoDB.
 O aplicativo permite que os usuários adicionem, visualizem, agrupem por data e excluam lembretes.
 
 ## Estrutura do Projeto
